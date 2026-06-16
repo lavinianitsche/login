@@ -1,8 +1,6 @@
 // seleção dos elementos do DOM
-const loginForm = document.querySelector('#login');
 const emailInput = document.querySelector('#email');
 const senhaInput = document.querySelector('#senha');
-const messageDiv = document.querySelector('#message');
 
 function time() {
     let data = new Date();

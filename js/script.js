@@ -6,13 +6,13 @@ const messageDiv = document.querySelector('#message');
 
 function time() {
     let data = new Date();
-    // console.log(data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds());
+    return data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds();
 }
 // console.log(time());
 
 function entrar() {
-    // resolver o time q ta dando undefined
-    // console.log('tentativa de login efetuada em: ' + time());
+
+    console.log('tentativa de login efetuada em: ' + time());
 
     let email = emailInput.value.trim();
     email = email.replaceAll(" ", "");
@@ -20,7 +20,6 @@ function entrar() {
     
     if (email === "" ) {
         message('section', 'erro: email não pode estar vazio', 'error');
-        email.focus();
         email.value = "";
         
         return;
@@ -45,9 +44,11 @@ function entrar() {
         return;
     }
 
-    
 }
 
+// COMENTÁRIO IMPORTANTE ABAIXO!!!! 
+
+// peguei do meu trabalho dos ingredientes (com ajuda da ia, apenas para deixar bonitinho a mensagem, nao tira nota por favor 🙏)
 function message(tipo, message, status) {
     const elemento = document.getElementById('message');
     elemento.innerHTML = message;

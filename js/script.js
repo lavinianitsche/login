@@ -1,55 +1,67 @@
-// const emailInput = document.getElementById("email");
-// const senhaInput = document.getElementById("senha");
+// seleção dos elementos do DOM
+const loginForm = document.querySelector('#login');
+const emailInput = document.querySelector('#email');
+const senhaInput = document.querySelector('#senha');
+const messageDiv = document.querySelector('#message');
 
-// function time() {
-//     let data = new Date();
-//     console.log(data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds());
-// }
+function time() {
+    let data = new Date();
+    // console.log(data.getHours() + ":" + data.getMinutes() + ":" + data.getSeconds());
+}
 // console.log(time());
 
-// function entrar() {
+function entrar() {
+    // resolver o time q ta dando undefined
+    // console.log('tentativa de login efetuada em: ' + time());
 
-//     let email = emailInput.value.toLowerCase().trim();
-//     email = email.replaceAll(" ", "");
+    let email = emailInput.value.trim();
+    email = email.replaceAll(" ", "");
+    let senha = senhaInput.value.trim()
     
-//     if (email === "" || name.length < 20) {
-//         // mensagem('crud', name === "" ? "erro: email não pode estar vazio" : "erro: email deve ter no mínimo 3 letras", 'error');
-//         email.focus();
-//         email.value = "";
+    if (email === "" ) {
+        message('section', 'erro: email não pode estar vazio', 'error');
+        email.focus();
+        email.value = "";
         
-//         return;
-//     }
+        return;
+        
+    } else if (senha === "") {
+        message('section', 'erro: senha não pode estar vazia', 'error');
+
+        return;
+        
+    } else if (email === "lavyizhere@gmail.com" || senha === "lavi0404") {
+        message('section', 'login efetuado com sucesso', 'success')
+        email.value = "";
+        senha.value = "";
+
+        return;
+        
+    } else {
+        message('section', 'email e/ou senha incorretos', 'error')
+        email.value = "";
+        senha.value = "";
+
+        return;
+    }
+
     
-// }
-
-// function message(tipo, message, status) {
-//     const elemento = document.getElementById(`mensagem${tipo === 'busca' ? 'Busca' : 'Crud'}`);
-//     elemento.innerHTML = message;
-//     elemento.style.background = status === 'success' ? '#c8e6c9' : '#ffcdd2';
-//     elemento.style.color = status === 'success' ? '#2e7d32' : '#c62828';
-//     elemento.style.borderLeftColor = status === 'success' ? '#4caf50' : '#f44336';
-    
-//     setTimeout(() => {
-//         elemento.innerHTML = '';
-//         elemento.style.background = '#e1f5fe';
-//         elemento.style.color = '#0277bd';
-//         elemento.style.borderLeftColor = '#4fc3f7';
-//     }, 4000);
-// }
-
-// seleção dos elementos do DOM
-const loginform = document.querySelector('#login-box');
-const emailinput = document.querySelector('#email');
-const senhainput = document.querySelector('#senha');
-const messagediv = document.querySelector('#message');
-
-function first() {
-    console.log(loginform);
-    console.log(emailinput);
-    console.log(senhainput);
-    console.log(messagediv);
 }
 
-function second() {
+function message(tipo, message, status) {
+    const elemento = document.getElementById('message');
+    elemento.innerHTML = message;
+    elemento.style.background = status === 'success' ? '#c8e6c9' : '#ffcdd2';
+    elemento.style.color = status === 'success' ? '#2e7d32' : '#c62828';
+    elemento.style.border = status === 'success' ? '1px solid #a5d6a7' : '1px solid #ef9a9a';
+    elemento.style.borderRadius = '40px';
+    elemento.style.padding = '10px';
     
+    setTimeout(() => {
+        elemento.innerHTML = '';
+        elemento.style.background = 'transparent';
+        elemento.style.color = '';
+        elemento.style.border = 'none';
+        elemento.style.padding = '0';
+    }, 4000);
 }

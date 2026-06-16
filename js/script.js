@@ -22,9 +22,9 @@
     
 // }
 
-// function mensagem(tipo, mensagem, status) {
+// function message(tipo, message, status) {
 //     const elemento = document.getElementById(`mensagem${tipo === 'busca' ? 'Busca' : 'Crud'}`);
-//     elemento.innerHTML = mensagem;
+//     elemento.innerHTML = message;
 //     elemento.style.background = status === 'success' ? '#c8e6c9' : '#ffcdd2';
 //     elemento.style.color = status === 'success' ? '#2e7d32' : '#c62828';
 //     elemento.style.borderLeftColor = status === 'success' ? '#4caf50' : '#f44336';
@@ -43,3 +43,13 @@ const emailinput = document.querySelector('#email');
 const senhainput = document.querySelector('#senha');
 const messagediv = document.querySelector('#message');
 
+function first() {
+    console.log(loginform);
+    console.log(emailinput);
+    console.log(senhainput);
+    console.log(messagediv);
+}
+
+function second() {
+    
+}
